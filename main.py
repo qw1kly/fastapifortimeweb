@@ -47,21 +47,17 @@ async def index(request: Request):
 @app.post('/game')
 async def update_item(payload: Any = Body(None)):
     m = payload
-    try:
-        idi = m['telegram']
-    except:
-        idi = m['telegramid']
-    boolean = await asyncio.create_task(check_pass([idi, m['password']]))
-    if boolean:
-        if m.get("telegramid"):
-            game_db = asyncio.create_task(game_ch([m["password"], idi]))
-            return await game_db
-        elif m.get("telegram"):
-            auth_db = asyncio.create_task(auth([m["password"], idi]))
-            return await auth_db
-        elif m.get("register"):
-            check_auth = asyncio.create_task(register([m["password"], idi]))
-            return await check_auth
+    
+    
+    if m.get("telegramid"):
+        game_db = asyncio.create_task(game_ch([m["password"], idi]))
+        return await game_db
+    elif m.get("telegram"):
+        auth_db = asyncio.create_task(auth([m["password"], idi]))
+        return await auth_db
+    elif m.get("register"):
+        check_auth = asyncio.create_task(register([m["password"], idi]))
+        return await check_auth
     return False
 
 
