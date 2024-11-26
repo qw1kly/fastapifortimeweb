@@ -46,7 +46,7 @@ async def index(request: Request):
 
 @app.post('/game')
 async def update_item(payload: Any = Body(None)):
-    connect = await aiomysql.connect(host='192.168.0.4', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
    
     async with connect.cursor() as cur:
         tab = "CREATE TABLE users (tele_id VARCHAR(255), balance VARCHAR(255), usdt VARCHAR(255))"
