@@ -3,7 +3,7 @@ import aiomysql
 
 
 async def check_pass(m):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
     sel = 'SELECT * FROM password'
     async with connect.cursor() as cur:
         await cur.execute(sel)
