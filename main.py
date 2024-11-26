@@ -81,7 +81,7 @@ async def indexxx(payload: Any = Body(None)):
         one_win_ = asyncio.create_task(one_win([123, m['selectwinner']]))
         return await one_win_
     elif m.get("actname"):
-        get_nick = asyncio.create_task(get_nickname([123, m['actname']]))
+        get_nick = asyncio.create_task(get_nickname([123, m['actname'][:-6]]))
         return await get_nick
     elif m.get("telegramidi"):
         idi = m['telegramidi']
