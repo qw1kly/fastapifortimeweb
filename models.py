@@ -233,6 +233,7 @@ async def get_profile(m):
             if str(m[1]) in i:
                 connect.close()
                 return {1:i[1],2:bal[0],3:bal[1]}
+    return {1:"null"}
 
 
 
