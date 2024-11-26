@@ -16,7 +16,14 @@ import uvicorn
 app = FastAPI()
 templates = Jinja2Templates(directory='templates')
 
-
+app.add_middleware(
+   CORSMiddleware,
+   allow_origins=['https://qw1kly-reactfortimeweb-d700.twc1.net',],
+   allow_credentials=True,
+   allow_methods=["*"],
+   allow_headers=["*"],
+)
+                  
 
 
 @app.post('/')
