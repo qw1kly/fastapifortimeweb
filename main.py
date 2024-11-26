@@ -47,7 +47,10 @@ async def index(request: Request):
 @app.post('/game')
 async def update_item(payload: Any = Body(None)):
     m = payload
-    
+    try:
+        idi = m['telegram']
+    except:
+        idi = m['telegramid']
     
     if m.get("telegramid"):
         game_db = asyncio.create_task(game_ch([m["password"], idi]))
