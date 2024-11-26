@@ -46,31 +46,6 @@ async def index(request: Request):
 
 @app.post('/game')
 async def update_item(payload: Any = Body(None)):
-    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
-   
-    async with connect.cursor() as cur:
-        tab = "CREATE TABLE address (idi VARCHAR(255), adress VARCHAR(255))"
-        await cur.execute(tab)
-        tab = "CREATE TABLE history (obvs VARCHAR(255), date VARCHAR(255), price VARCHAR(255))"
-        await cur.execute(tab)
-        tab = "CREATE TABLE password (telegram VARCHAR(255), pass VARCHAR(255))"
-        await cur.execute(tab)
-        tab = "CREATE TABLE pointersid (child VARCHAR(255), referal VARCHAR(255), points VARCHAR(255))"
-        await cur.execute(tab)
-        tab = "CREATE TABLE points (id_of VARCHAR(255), points VARCHAR(255))"
-        await cur.execute(tab)
-        tab = "CREATE TABLE referals (ref_id VARCHAR(255), child_id VARCHAR(255))"
-        await cur.execute(tab)
-        tab = "CREATE TABLE registration (telegram VARCHAR(255), name VARCHAR(255), photo VARCHAR(255))"
-        await cur.execute(tab)
-        tab = "CREATE TABLE riddles (telegram_unique_id VARCHAR(255), riddle VARCHAR(255))"
-        await cur.execute(tab)
-        tab = "CREATE TABLE winners (tel_id VARCHAR(255), access INT)"
-        await cur.execute(tab)
-        tab = "CREATE TABLE GAMES (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, tele_id VARCHAR(255))"
-        await cur.execute(tab)
-        await connect.commit()
-    return {1: connect}
     m = payload
     try:
         idi = m['telegram']
