@@ -26,7 +26,9 @@ app.add_middleware(
    allow_headers=["*"],
 )
                   
-
+@app.get('/')
+async def index(request: Request):
+    return {'aaa':1}
 
 @app.post('/')
 async def index(payload: Any = Body(None)):
@@ -44,6 +46,7 @@ async def index(request: Request):
 
 @app.post('/game')
 async def update_item(payload: Any = Body(None)):
+    return {1: "success!"}
     m = payload
     try:
         idi = m['telegram']
