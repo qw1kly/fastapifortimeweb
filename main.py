@@ -13,7 +13,7 @@ from aiogram import Bot
 from aiogram import types
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
-
+import aiomysql
 
 app = FastAPI()
 templates = Jinja2Templates(directory='templates')
