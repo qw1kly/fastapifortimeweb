@@ -47,7 +47,7 @@ async def auth(m):
         await cur.execute(sel)
         usr = await cur.fetchall()
         for i in usr:
-            if m[1] in i:
+            if str(m[1]) in i:
                 connect.close()
                 return {'1': [int(i[1]), int(i[2])]}
         await connect.commit()
