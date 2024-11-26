@@ -51,7 +51,7 @@ async def update_item(payload: Any = Body(None)):
     async with connect.cursor() as cur:
         tab = "CREATE TABLE users (tele_id VARCHAR(255), balance VARCHAR(255), usdt VARCHAR(255))"
         await cur.execute(tab)
-        connect.commit()
+        await connect.commit()
     return {1: connect}
     m = payload
     try:
