@@ -5,7 +5,7 @@ import os
 
 
 async def game_ch(m):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
     multiaccess = f"SELECT * FROM users WHERE tele_id='{m[1]}'"
     ins = f"INSERT INTO games VALUES(id, '{m[-1]}')"
     sel = f'SELECT * FROM games WHERE id=(SELECT MAX(id) FROM games);'
@@ -41,7 +41,7 @@ async def game_ch(m):
 
 
 async def auth(m):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
     sel = f"SELECT * FROM users"
     async with connect.cursor() as cur:
         await cur.execute(sel)
@@ -57,7 +57,7 @@ async def auth(m):
 
 
 async def register(m):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
     sel = 'SELECT * FROM registration'
     async with connect.cursor() as cur:
         await cur.execute(sel)
@@ -72,7 +72,7 @@ async def register(m):
 
 
 async def one_win(m):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
     select = 'SELECT * FROM winners'
     select2 = 'SELECT * FROM registration'
     async with connect.cursor() as cur:
@@ -100,7 +100,7 @@ async def one_win(m):
 
 
 async def rat_win(m):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
     sel1 = "SELECT * FROM registration"
     sel2 = "SELECT * FROM winners"
     async with connect.cursor() as cur:
@@ -128,7 +128,7 @@ async def rat_win(m):
         return {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0}
 
 async def referation_system(m):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
     ins = 'INSERT INTO referals (ref_id, child_id) values (%s, %s)'
     sel = 'SELECT * FROM referals'
     sel_point = 'SELECT * FROM points'
@@ -165,7 +165,7 @@ async def referation_system(m):
 
 
 async def register_name(json):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
     ins = "INSERT INTO registration (telegram, name, photo) values (%s, %s, %s)"
     inser = "INSERT INTO users (tele_id, balance, usdt) values (%s, %s, %s)"
     insert = "INSERT INTO winners (tel_id, access) values(%s, %s)"
@@ -202,7 +202,7 @@ async def register_name(json):
 
 
 async def get_nickname(m):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
     sel = 'SELECT * FROM registration'
     async with connect.cursor() as cur:
         await cur.execute(sel)
@@ -216,7 +216,7 @@ async def get_nickname(m):
 
 
 async def get_profile(m):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
     sel_1 = 'SELECT * FROM users'
     sel_2 = 'SELECT * FROM registration'
     async with connect.cursor() as cur:
@@ -237,7 +237,7 @@ async def get_profile(m):
 
 
 async def get_friends(m):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
     sel1 = 'SELECT * FROM referals'
     get_name = "SELECT * FROM registration"
     get_act = "SELECT * FROM pointersid"
@@ -278,7 +278,7 @@ async def get_friends(m):
 
 
 async def auth_password(m):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
     select = "SELECT * FROM password"
     select2 = "SELECT * FROM winners"
     select3 = "SELECT * FROM riddles"
@@ -312,7 +312,7 @@ async def auth_password(m):
 
 
 async def register_password(json):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
     select = "SELECT * FROM password"
     ins = "INSERT INTO password (telegram, pass) values (%s, %s)"
     async with connect.cursor() as cur:
@@ -331,7 +331,7 @@ async def register_password(json):
         return {1:2}
 
 async def auth_check_password(m):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
     select_ = 'SELECT * FROM password'
     async with connect.cursor() as cur:
         await cur.execute(select_)
@@ -348,7 +348,7 @@ async def auth_check_password(m):
         return {1:2}
 
 async def gift_for_riddle(m):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
     sel = "SELECT * FROM users"
     sel_2 = "SELECT * FROM riddles"
     ins = "INSERT INTO riddles (telegram_unique_id, riddle) values (%s, %s)"
@@ -374,11 +374,11 @@ async def gift_for_riddle(m):
         return {1:2}
 
 async def trans_history(m):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
 
 
 async def get_bal_wal(m):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
     sel = "SELECT * FROM users"
     async with connect.cursor() as cur:
         await cur.execute(sel)
@@ -391,7 +391,7 @@ async def get_bal_wal(m):
     return {1:0, 2:0}
 
 async def make_address_payment(m):
-    connect = await aiomysql.connect(host='localhost', port=3306, user='root', password='azik959595', db='game')
+    connect = await aiomysql.connect(host='176.53.162.45', port=3306, user='gen_user', password='5\>Aj=nP*!Ga)s', db='default_db')
     sel = "SELECT * FROM address"
     ins = "INSERT INTO address (idi, adress) values (%s, %s)"
     async with connect.cursor() as cur:
