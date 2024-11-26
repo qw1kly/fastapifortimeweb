@@ -176,7 +176,7 @@ async def register_name(json):
         for i in usr_fals:
             if json['id'] in i:
                 connect.close()
-                return {1:2}
+                return {1:3}
             if json['nickname'] in i:
                 connect.close()
                 return {1:2}
